@@ -1,13 +1,66 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="/css/index-23348f29e9bbbc27f83c8fe2e1eb448d49d3dd4f1e7c1a36bda3129eef309f46.css" />
-
-
-
-
-
-<link href="https://fonts.googleapis.com" rel="preconnect" ><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin ></head>
-<body id="i3lx"><div id="id3j">First update test <br/></div></body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portofolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo"> Esteban Marques</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo"> Esteban Marques</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#experience"onclick="toggleMenu()">Experience</a></li>
+                <li><a href="#projects"onclick="toggleMenu()">Project</a></li>
+                <li><a href="#contact"onclick="toggleMenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+    <section id="profile"> 
+        <div class="section__pic-container">
+            <img src="./assets/profile-pic.png" alt="Profile picture">
+        </div>
+        <div class="section__text">
+            <p class="section__p1"> Hi, I'm</p>
+            <h1 class="title"> Esteban Marques</h1>
+            <p class="section__text__p2">Game Designer</p>
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="window.open('./assets/resume-example.pdf')">
+                    Découvrir mon CV
+                </button>
+                <button class="btn btn-color-1" onclick="location.href='./#contact'">
+                    Me contacter
+                </button>
+            </div>
+            <div id="socials-container">
+                <img src="./assets/linkedin.png" alt="My Linkedin profile"
+                class="icon" onclick="location.href='https://linkedin.com/in/esteban-marques-040632155'"
+                />
+                <img src="./assets/github.png" alt="My github profile"
+                class="icon" onclick="location.href='https://github.com'"
+                />
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
 </html>
