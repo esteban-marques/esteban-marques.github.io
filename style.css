@@ -68,6 +68,9 @@ a:hover {
 
 .logo:hover {
     cursor: default;
+    background: linear-gradient(90deg, #2C9C97,#94C6A4);
+    background-clip: text;
+    color: transparent;
 }
 
 /* HAMBURGER MENU  */
