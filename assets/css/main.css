@@ -141,6 +141,16 @@ input, select, textarea {
 		margin: 0 0 0.5625em 0;
 	}
 
+	h1.title a {
+  		font-family: Doto;
+	}
+
+	h1.subtitle a {
+  		font-family: Doto;
+		font-size: 0.35em;
+		color:#5AC775 !important;
+	}
+
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 			border: 0;
 			color: inherit;
