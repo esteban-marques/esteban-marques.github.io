@@ -16,7 +16,7 @@
 		<!-- Header -->
 			<section id="header">
 				<header>
-					<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
+    				<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
 					<h1 id="logo"><a href="#">Esteban Marques</a></h1>
 					<h1 id="logo"><a href="#">Technical Systems Designer</a></h1>
 					<p>Gameplay // Systems // Tools // Prototyping<br />
@@ -29,6 +29,7 @@
 						<li><a href="#four">Skills & Specializations</a></li>
 					</ul>
 				</nav>
+				<canvas id="mazeCanvas" width="300" height="300" style="display:block; margin: 0 auto 1em;"></canvas>
 				<footer>
 					<ul class="icons">
 						<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
@@ -479,5 +480,79 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			<script>
+				const canvas = document.getElementById('mazeCanvas');
+				const ctx = canvas.getContext('2d');
+				const CELL = 23, COLS = 13, ROWS = 13;
+
+				const walls = [
+					[1,1,1,1,1,1,1,1,1,1,1,1,1],
+					[1,0,0,0,1,0,1,0,0,0,0,0,1],
+					[1,0,1,0,1,0,1,0,1,1,1,0,1],
+					[1,0,1,0,0,0,1,0,0,0,1,0,1],
+					[1,0,1,1,1,1,1,1,1,0,1,0,1],
+					[1,0,0,0,0,0,0,1,0,0,1,0,1],
+					[1,1,1,1,1,1,0,1,0,1,1,0,1],
+					[1,0,0,0,0,1,0,1,0,0,1,0,1],
+					[1,0,1,1,0,1,0,1,1,0,1,0,1],
+					[1,0,1,0,0,1,0,0,0,0,1,0,1],
+					[1,0,1,0,1,1,1,1,1,1,1,0,1],
+					[1,0,1,0,0,0,0,0,0,0,0,0,1],
+					[1,1,1,1,1,1,1,1,1,1,1,1,1],
+				];
+
+				const path = [
+					[11,1],[10,1],[9,1],[8,1],
+					[7,1],[7,2],[7,3],[7,4],
+					[8,4],[9,4],
+					[9,3],
+					[10,3],[11,3],
+					[11,4],[11,5],[11,6],[11,7],[11,8],[11,9],[11,10],[11,11],
+					[10,11],[9,11],[8,11],[7,11],[6,11],[5,11],[4,11],[3,11],[2,11],[1,11],
+					[1,10],[1,9],[1,8],[1,7],
+					[2,7],[3,7],
+					[3,8],[3,9],
+					[4,9],[5,9],
+					[5,8],
+					[6,8],[7,8],
+					[7,9],
+					[8,9],[9,9],
+					[9,8],[9,7],[9,6],
+					[8,6],[7,6],[6,6],[5,6],
+					[5,5],[5,4],[5,3],[5,2],[5,1],
+					[4,1],[3,1],[2,1],[1,1],
+					[1,2],[1,3],
+					[2,3],[3,3],
+					[3,4],[3,5],
+					[2,5],[1,5],
+				];
+
+				function draw(pct) {
+					ctx.clearRect(0, 0, 500, 500);
+					for (let r = 0; r < ROWS; r++) {
+						for (let c = 0; c < COLS; c++) {
+							ctx.fillStyle = walls[r][c] === 1 ? '#1D202B' : '#101117';
+							ctx.fillRect(c * CELL, r * CELL, CELL, CELL);
+						}
+					}
+					const filled = Math.floor((pct / 100) * path.length);
+					for (let i = 0; i < filled; i++) {
+						const [r, c] = path[i];
+						ctx.fillStyle = `rgba(74, 222, 128, ${0.4 + 0.6 * (i / path.length)})`;
+						ctx.fillRect(c * CELL + 1, r * CELL + 1, CELL - 2, CELL - 2);
+					}
+				}
+
+				function onScroll() {
+					const el = document.getElementById('wrapper');
+					const scrolled = window.scrollY;
+					const total = el.scrollHeight - window.innerHeight;
+					draw(Math.min(100, (scrolled / total) * 100));
+				}
+
+				window.addEventListener('scroll', onScroll);
+				draw(0);
+				</script>
+			
 	</body>
 </html>

@@ -2700,7 +2700,8 @@ input, select, textarea {
 		-webkit-justify-content: space-between;
 		-ms-justify-content: space-between;
 		justify-content: space-between;
-		background: #5AC775;
+
+		background: #1D202B;
 		color: #5AC775;
 		height: 100%;
 		overflow-y: auto;
@@ -2792,7 +2793,7 @@ input, select, textarea {
 			}
 
 				#header > nav ul li {
-					border-top: solid 2px #5ccfb1;
+					border-top: transparent;
 					display: block;
 					padding: 0;
 				}
@@ -2810,7 +2811,7 @@ input, select, textarea {
 					}
 
 						#header > nav ul li a.active {
-							background: #fff;
+							background: #101117;
 							color: #5AC775 !important;
 						}
 
@@ -2828,7 +2829,7 @@ input, select, textarea {
 /* Main */
 
 	#main > section {
-		border-top: solid 6px #2C3040;
+		border-top: solid 6px #1D202B;
 	}
 
 		#main > section > .container {
@@ -2842,7 +2843,7 @@ input, select, textarea {
 /* Footer */
 
 	#footer {
-		background: #2C3040;
+		background: #1D202B;
 		border-top: 0;
 		color: #c0c0c0;
 		overflow: hidden;
