@@ -83,7 +83,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: red;
+		background: transparent;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -133,6 +133,7 @@ input, select, textarea {
 		margin: 0 0 2.25em 0;
 	}
 
+
 	h1, h2, h3, h4, h5, h6 {
 		color: #777;
 		font-weight: 700;
@@ -145,6 +146,7 @@ input, select, textarea {
 			color: inherit;
 			text-decoration: none;
 		}
+
 
 	h2 {
 		font-size: 2em;
@@ -2701,7 +2703,7 @@ input, select, textarea {
 		-ms-justify-content: space-between;
 		justify-content: space-between;
 
-		background: #1D202B;
+		background: #090B0E;
 		color: #5AC775;
 		height: 100%;
 		overflow-y: auto;
@@ -2750,7 +2752,7 @@ input, select, textarea {
 			}
 
 			#header > header h1 {
-				font-size: 1.75em;
+				font-size: 3em;
 				margin: 0;
 			}
 

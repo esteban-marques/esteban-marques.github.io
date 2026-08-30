@@ -1,9 +1,13 @@
 <!DOCTYPE HTML>
-<!--
-	Read Only by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Doto:wght@400;500;600;700;800;900&display=swap"
+  rel="stylesheet"
+>
+
 <html>
 	<head>
 		<title>Read Only by HTML5 UP</title>
@@ -12,13 +16,13 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 	<body class="is-preload">
-
+		<canvas id="bgCanvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none;"></canvas>
 		<!-- Header -->
 			<section id="header">
 				<header>
-    				<span class="image avatar"><img src="images/avatar.jpg" alt="" /></span>
-					<h1 id="logo"><a href="#">Esteban Marques</a></h1>
-					<h1 id="logo"><a href="#">Technical Systems Designer</a></h1>
+					<h1 id="title"><a href="#">ESTEBAN</a></h1>
+					<h1 id="title"><a href="#">MARQUES</a></h1>
+					<h1 id="subtitle"><a href="#">Technical Systems Designer</a></h1>
 					<p>Gameplay // Systems // Tools // Prototyping<br />
 				</header>
 				<nav id="nav">
@@ -531,7 +535,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 					ctx.clearRect(0, 0, 500, 500);
 					for (let r = 0; r < ROWS; r++) {
 						for (let c = 0; c < COLS; c++) {
-							ctx.fillStyle = walls[r][c] === 1 ? '#1D202B' : '#101117';
+							ctx.fillStyle = walls[r][c] === 1 ? '#090B0E' : '#1C1E28';
 							ctx.fillRect(c * CELL, r * CELL, CELL, CELL);
 						}
 					}
@@ -552,7 +556,56 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 				window.addEventListener('scroll', onScroll);
 				draw(0);
-				</script>
+			</script>
+			<script>
+				const bgCanvas = document.getElementById('bgCanvas');
+				const bgCtx = bgCanvas.getContext('2d');
+				const SQUARE_SIZE = 15;
+				const squares = [];
+
+				function resizeBg() {
+					bgCanvas.width = window.innerWidth;
+					bgCanvas.height = window.innerHeight;
+				}
+
+				function initSquares() {
+					squares.length = 0;
+					const count = Math.floor((bgCanvas.width * bgCanvas.height) / 64000);
+					for (let i = 0; i < count; i++) {
+						squares.push({
+							x: Math.random() * bgCanvas.width,
+							y: Math.random() * bgCanvas.height,
+							opacity: Math.random(),
+							speed: 0.0002 + Math.random() * 0.0003,
+							phase: Math.random() * Math.PI * 2,
+							vx: (Math.random() - 0.5) * 0.4,
+							vy: (Math.random() - 0.5) * 0.4
+						});
+					}
+				}
+				function drawBg(timestamp) {
+					bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+					squares.forEach(sq => {
+						sq.x += sq.vx;
+						sq.y += sq.vy;
+
+						// wrap around edges
+						if (sq.x < -SQUARE_SIZE) sq.x = bgCanvas.width;
+						if (sq.x > bgCanvas.width) sq.x = -SQUARE_SIZE;
+						if (sq.y < -SQUARE_SIZE) sq.y = bgCanvas.height;
+						if (sq.y > bgCanvas.height) sq.y = -SQUARE_SIZE;
+
+						sq.opacity = 0.03 + 0.07 * Math.abs(Math.sin(timestamp * sq.speed + sq.phase));
+						bgCtx.fillStyle = `rgba(74, 222, 128, ${sq.opacity})`;
+						bgCtx.fillRect(sq.x, sq.y, SQUARE_SIZE, SQUARE_SIZE);
+					});
+					requestAnimationFrame(drawBg);
+				}
+				resizeBg();
+				initSquares();
+				requestAnimationFrame(drawBg);
+				window.addEventListener('resize', () => { resizeBg(); initSquares(); });
+			</script>
 			
 	</body>
 </html>
