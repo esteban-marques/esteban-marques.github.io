@@ -142,7 +142,11 @@ input, select, textarea {
 	}
 
 	h1.title a {
-  		font-family: Doto;
+  		font-family: Bungee Hairline;
+	}
+
+	h1.subtitle {
+  		display:inline-flex;
 	}
 
 	h1.subtitle a {
@@ -159,6 +163,7 @@ input, select, textarea {
 
 
 	h2 {
+		font-family: Doto;
 		font-size: 2em;
 		line-height: 1.5em;
 	}
@@ -2737,7 +2742,7 @@ input, select, textarea {
 		}
 
 		#header a {
-			color: #d2f2e9;
+			color: #5AC775;
 		}
 
 			#header a:hover {
@@ -2788,7 +2793,7 @@ input, select, textarea {
 			}
 
 				#header > footer .icons li a {
-					color: #b7eadc;
+					color: #5AC775;
 				}
 
 		#header > nav {
@@ -2820,11 +2825,23 @@ input, select, textarea {
 						display: block;
 						padding: 0.85em 0;
 						text-decoration: none;
+						font-family: Doto;
 					}
 
 						#header > nav ul li a.active {
 							background: #101117;
 							color: #5AC775 !important;
+							
+						}
+
+						#header > nav ul li a.active::before {
+							content: "<";
+							margin-right: 5px;
+						}
+
+						#header > nav ul li a.active::after {
+						content: ">";
+						margin-left: 5px;
 						}
 
 					#header > nav ul li:first-child {
