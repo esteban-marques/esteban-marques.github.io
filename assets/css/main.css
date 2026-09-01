@@ -22,7 +22,7 @@ section, summary, time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
+	font-family: "Quantico", sans-serif;
 	vertical-align: baseline;}
 
 article, aside, details, figcaption, figure,
@@ -1726,7 +1726,7 @@ input, select, textarea {
 	.container {
 		margin: 0 auto;
 		max-width: calc(100% - 4.5em);
-		width: 45em;
+		width: 60em;
 	}
 
 		.container.xsmall {
@@ -1742,7 +1742,7 @@ input, select, textarea {
 		}
 
 		.container.large {
-			width: 56.25em;
+			width: 56.1em;
 		}
 
 		.container.xlarge {
@@ -1802,8 +1802,13 @@ input, select, textarea {
 	}
 
 	header.major h2 {
-		color: #5AC775;
-		font-size: 3.5em;
+		color: #FFF;
+		font-size: 2.5em;
+	}
+
+	header.major h2 .highlight {
+		font-family: Doto;
+    	color: #5AC775;
 	}
 
 		header.major h2 + p {
@@ -2858,16 +2863,71 @@ input, select, textarea {
 /* Main */
 
 	#main > section {
-		border-top: solid 6px #1D202B;
+		border-top:transparent; /* solid 6px #1D202B; */
 	}
 
 		#main > section > .container {
-			padding: 6em 0 4em 0;
+			padding: 15em 0 10em 0;
 		}
 
 		#main > section:first-child {
 			border-top: 0;
 		}
+
+/* Scroll Down CTA */
+
+
+
+a.scroll-down,
+a.scroll-down:visited,
+a.scroll-down:hover,
+a.scroll-down:active,
+a.scroll-down:focus {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+
+    color: #FFF;
+    text-decoration: none !important;
+    border-bottom: none !important;
+    box-shadow: none !important;
+
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.scroll-text {
+    font-size: 0.85em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #FFF;
+}
+
+.scroll-chevron {
+    width: 12px;
+    height: 12px;
+    border-right: 2px solid #FFF;
+    border-bottom: 2px solid #FFF;
+    transform: rotate(45deg);
+}
+
+a.scroll-down:hover .scroll-text {
+    color: #5AC775;
+}
+
+a.scroll-down:hover .scroll-chevron {
+    border-color: #5AC775;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(5px);
+    }
+}
 
 /* Footer */
 
