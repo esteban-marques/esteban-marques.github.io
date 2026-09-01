@@ -52,7 +52,7 @@
 									</header>
 									<p>I'm a Technical Game Designer based in France with 4 years of experience shipping PC and console titles in small, multidisciplinary teams. I design and implement gameplay systems with a focus on durability and team usability: building data-driven architectures, clear documentation, and workflows that let the whole team iterate safely and efficiently. From early prototype to post-launch updates, I stay involved to make sure the systems I build remain solid, adaptable, and easy to evolve.</p>
 								<a href="#two" class="scroll-down scrolly" aria-label="See featured projects">
-									<span class="scroll-text">See featured projects</span>
+									<span class="scroll-text">Featured projects</span>
 									<span class="scroll-chevron"></span>
 								</a>
 								</div>
@@ -61,19 +61,55 @@
 						<!-- Two -->
 							<section id="two">
 								<div class="container">
-									<h3>Things I Can Do</h3>
-									<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet.</p>
-									<ul class="feature-icons">
-										<li class="icon solid fa-code">Write all the code</li>
-										<li class="icon solid fa-cubes">Stack small boxes</li>
-										<li class="icon solid fa-book">Read books and stuff</li>
-										<li class="icon solid fa-coffee">Drink much coffee</li>
-										<li class="icon solid fa-bolt">Lightning bolt</li>
-										<li class="icon solid fa-users">Shadow clone technique</li>
-									</ul>
-								</div>
-							</section>
+									<h3>Featured Projects</h3>
+									<div class="features">
 
+										<article>
+											<a href="#" onclick="openPanel('darkhours'); return false;" class="image">
+												<img src="images/darkhours.jpg" alt="Dark Hours" />
+											</a>
+											<div class="inner">
+												<h4><a href="#" onclick="openPanel('darkhours'); return false;">Dark Hours</a></h4>
+												<p>Piece of Cake Studios — 2025 — PC, Consoles</p>
+												<p>A multiplayer comedic horror-game with procedurally generated levels.</p>
+												<ul class="actions">
+													<li><a href="#" onclick="openPanel('darkhours'); return false;" class="button small">Case Study</a></li>
+													<li><a href="https://store.steampowered.com/app/2208570" target="_blank" class="button small">Steam</a></li>
+												</ul>
+											</div>
+										</article>
+
+										<article>
+											<a href="#" class="image">
+												<img src="images/fantastichaven.jpg" alt="Fantastic Haven" />
+											</a>
+											<div class="inner">
+												<h4>Fantastic Haven</h4>
+												<p>Piece of Cake Studios — 2024 — PC (Demo)</p>
+												<p>A management game with an eco-friendly theme reflected in its setting and gameplay.</p>
+												<ul class="actions">
+													<li><a href="https://store.steampowered.com/app/2556470" target="_blank" class="button small">Steam</a></li>
+												</ul>
+											</div>
+										</article>
+
+										<article>
+											<a href="#" class="image">
+												<img src="images/myfantasticranch.jpg" alt="My Fantastic Ranch" />
+											</a>
+											<div class="inner">
+												<h4>My Fantastic Ranch</h4>
+												<p>Piece of Cake Studios — 2022 — PC, Consoles</p>
+												<p>A beginner-friendly management game aimed at young audiences.</p>
+												<ul class="actions">
+													<li><a href="https://store.steampowered.com/app/1949100" target="_blank" class="button small">Steam</a></li>
+												</ul>
+											</div>
+										</article>
+
+									</div>
+								</div>
+    </section>
 						<!-- Three -->
 							<section id="three">
 								<div class="container">
@@ -505,6 +541,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
+			/* Maze script */
 			<script>
 				const canvas = document.getElementById('mazeCanvas');
 				const ctx = canvas.getContext('2d');
@@ -578,6 +615,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 				window.addEventListener('scroll', onScroll);
 				draw(0);
 			</script>
+			/* Background script */
 			<script>
 				const bgCanvas = document.getElementById('bgCanvas');
 				const bgCtx = bgCanvas.getContext('2d');
@@ -627,6 +665,119 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 				requestAnimationFrame(drawBg);
 				window.addEventListener('resize', () => { resizeBg(); initSquares(); });
 			</script>
-			
+			/* Panels script */
+			<script>
+				const projects = {
+				'darkhours': {
+					title: 'Dark Hours',
+					studio: 'Piece of Cake Studios',
+					publisher: 'Piece of Cake Studios',
+					platforms: ['PC', 'Consoles'],
+					year: '2025',
+					trailer: 'https://www.youtube.com/embed/TON_ID_ICI',
+					description: 'Dark Hours is a co-op survival comedy-horror game where up to 4 players venture in procedurally generated levels to collect loot and complete objectives while being hunted by a fearsome entity. Released in Early Access after 6 months of production, the game was updated regularly for a year before its 1.0 release.',
+					stats: ['+500k copies on Steam', 'Very Positive reviews', '5 major content updates'],
+					contributions: [
+						'Designed and implemented the procedural room population system using UE5 PCG Framework and Data Tables',
+						'Defined level flow rules, navigation guidelines and pacing for procedurally generated levels',
+						'UI/UX prototyping in Figma and engine integration',
+						'Character mechanics implementation (stamina, item carrying systems)',
+						'Progression and economy balancing via spreadsheets',
+						'Live product iteration across a full year of Early Access updates',
+						'Supervised and mentored junior designers'
+					],
+					steam: 'https://store.steampowered.com/app/2208570',
+					caseStudy: '#' // à remplacer par le lien vers ta case study web
+				},
+				'fantastichaven': {
+					title: 'Fantastic Haven',
+					studio: 'Piece of Cake Studios',
+					publisher: 'Piece of Cake Studios',
+					platforms: ['PC'],
+					year: '2024 (Demo)',
+					trailer: 'https://www.youtube.com/embed/TON_ID_ICI',
+					description: 'Fantastic Haven is a creature habitat management game where players design and build environments for fantastical creatures. Players paint biome types on the ground and place vegetation or water that automatically adapts to the painted biome, modifying the habitat\'s climate parameters for the creatures.',
+					contributions: [
+						'Prototyped the habitat editor system in C#',
+						'Designed and iterated on the biome painting and climate parameter system',
+						'UI/UX design and engine integration for the habitat editor',
+						'Supervised the system\'s integration from prototype to in-game implementation'
+					],
+					steam: 'https://store.steampowered.com/app/TON_ID',
+					caseStudy: null
+				},
+				'myfantasticranch': {
+					title: 'My Fantastic Ranch',
+					studio: 'Piece of Cake Studios',
+					publisher: 'Piece of Cake Studios',
+					platforms: ['PC', 'Consoles'],
+					year: '2022',
+					trailer: 'https://www.youtube.com/embed/TON_ID_ICI',
+					description: 'My Fantastic Ranch is a casual management game where players run their own ranch with fantastical creatures.',
+					contributions: [
+						'Game design and implementation as intern',
+						'Contributed to game systems and mechanics'
+					],
+					steam: 'https://store.steampowered.com/app/TON_ID',
+					caseStudy: null
+				}
+			};
+
+			function openPanel(projectId) {
+				const p = projects[projectId];
+				if (!p) return;
+
+				const statsHtml = p.stats ? `
+					<div style="display:flex; gap:0.5em; flex-wrap:wrap; margin-bottom:1.5em">
+						${p.stats.map(s => `<span style="background:#2a3040; color:#4ade80; padding:4px 12px; border-radius:3px; font-size:0.8em">${s}</span>`).join('')}
+					</div>` : '';
+
+				const linksHtml = `
+					<div class="panel-links">
+						${p.steam ? `<a href="${p.steam}" target="_blank" class="primary">Steam page</a>` : ''}
+						${p.caseStudy ? `<a href="${p.caseStudy}" class="secondary">Case Study</a>` : ''}
+					</div>`;
+
+				document.getElementById('panelContent').innerHTML = `
+					<h2>${p.title}</h2>
+					<div class="panel-meta">
+						<div>${p.studio} · ${p.year}</div>
+						<div style="margin-top:0.5em">
+							${p.platforms.map(pl => `<span>${pl}</span>`).join('')}
+						</div>
+					</div>
+					${p.trailer ? `<iframe class="panel-trailer" src="${p.trailer}" allowfullscreen></iframe>` : ''}
+					${statsHtml}
+					<h4>About</h4>
+					<p>${p.description}</p>
+					<h4>My Contributions</h4>
+					<ul>${p.contributions.map(c => `<li>${c}</li>`).join('')}</ul>
+					${linksHtml}
+				`;
+
+				document.getElementById('sidePanel').style.right = '0';
+				document.getElementById('panelOverlay').style.display = 'block';
+				document.body.style.overflow = 'hidden';
+			}
+
+			function closePanel() {
+				document.getElementById('sidePanel').style.right = '-520px';
+				document.getElementById('panelOverlay').style.display = 'none';
+				document.body.style.overflow = '';
+			}
+
+			document.getElementById('closePanelBtn').addEventListener('click', closePanel);
+			document.getElementById('panelOverlay').addEventListener('click', closePanel);
+			document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
+			</script>
+	
+	<div id="panelOverlay"></div>
+	<div id="sidePanel">
+		<button id="closePanelBtn">✕ Close</button>
+		<div class="panel-inner">
+			<div id="panelContent"></div>
+		</div>
+	</div>
+
 	</body>
 </html>
