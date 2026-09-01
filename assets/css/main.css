@@ -3045,12 +3045,6 @@ a.scroll-down:hover .scroll-chevron {
 
 #closePanelBtn:hover { color: #e8eaf0; }
 
-document.addEventListener('click', function(e) {
-    if (e.target.id === 'closePanelBtn') closePanel();
-});
-document.getElementById('panelOverlay').addEventListener('click', closePanel);
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
-
 #panelOverlay {
     display: none;
     position: fixed;
@@ -3063,11 +3057,9 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel()
 /* Footer */
 
 	#footer {
-		background: #1D202B;
-		border-top: 0;
-		color: #c0c0c0;
+		border-top: 0;;
 		overflow: hidden;
-		padding: 4em 0 2em 0;
+		padding: 2em 0 0em 0;
 	}
 
 		#footer .copyright {
