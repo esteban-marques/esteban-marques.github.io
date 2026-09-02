@@ -134,8 +134,8 @@ input, select, textarea {
 	}
 
 
-	h1, h2, h3, h4, h5, h6 {
-		color: #777;
+	h1, h2, h4, h5, h6 {
+		color: #FFF;
 		font-weight: 700;
 		line-height: 1em;
 		margin: 0 0 0.5625em 0;
@@ -169,8 +169,20 @@ input, select, textarea {
 	}
 
 	h3 {
-		font-size: 1.75em;
+		font-family: Doto;
+		font-size: 1em;
 		line-height: 1.5em;
+		color: #5AC775;
+	}
+
+	h3:before {
+		content: "<";
+		margin-right: 7px;
+	}
+
+	h3:after {
+		content: ">";
+		margin-left: 7px;
 	}
 
 	h4 {
@@ -2980,7 +2992,7 @@ a.scroll-down:focus {
     border-bottom: none !important;
     box-shadow: none !important;
 
-    animation: bounce 2s ease-in-out infinite;
+    animation: bounce 2.5s ease-in-out infinite;
 }
 
 .scroll-text {
@@ -3016,6 +3028,62 @@ a.scroll-down:hover .scroll-chevron {
     }
 }
 
+/* Experience & Formation Timeline */
+
+.timeline {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 40px;}
+
+.timeline-item {
+  position: relative;
+}
+
+/* date */
+.date {
+  display: block;
+  padding-top: 0;
+  margin-top: 5px;
+
+  font-size: 12px;
+  color: #68748d;
+  letter-spacing: 0.02em;
+  
+}
+
+
+
+/* titre */
+.timeline-item h4 {
+  position: relative;
+  margin: 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.999);
+  color: #f0f1f5;
+  font-size: 100%;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+/* entreprise */
+.company {
+  margin-top: 12px;
+  margin-bottom: 14px;
+  color: #68748d;
+  font-size: 12px;
+}
+
+/* description */
+.timeline-item > p:last-child {
+  margin: 0;
+
+  color: #929bad;
+  font-size: 75%;
+  line-height: 1.65;
+}
+
+
 /* Side Panels */
 
 #sidePanel {
@@ -3025,12 +3093,12 @@ a.scroll-down:hover .scroll-chevron {
     width: min(800px);
     max-width: 100vw;
     height: 100vh;
-    background: #1a2230;
+    background: #101117;
     z-index: 1000;
     transition: right 0.4s ease;
     overflow-y: auto;
     box-sizing: border-box;
-    border-left: 1px solid #2a3040;
+    border-left: 1px solid #222431;
 }
 
 #sidePanel .panel-inner {
@@ -3052,7 +3120,7 @@ a.scroll-down:hover .scroll-chevron {
 
 #sidePanel .panel-meta span {
     display: inline-block;
-    background: #2a3040;
+    background: #222431;
     padding: 2px 10px;
     border-radius: 3px;
     margin: 2px 4px 2px 0;
@@ -3068,7 +3136,7 @@ a.scroll-down:hover .scroll-chevron {
 }
 
 #sidePanel h4 {
-    color: #4ade80;
+    color: #5AC775;
     font-size: 0.8em;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -3104,7 +3172,7 @@ a.scroll-down:hover .scroll-chevron {
 }
 
 #sidePanel .panel-links a.primary {
-    background: #4ade80;
+    background: #5AC775;
     color: #0f1117;
 }
 
@@ -3123,7 +3191,7 @@ a.scroll-down:hover .scroll-chevron {
     display: block;
     width: 100%;
     padding: 1em 2em;
-    background: #1a2230;
+    background: #101117;
     border: none;
     border-bottom: 1px solid #2a3040;
     color: #6b7280;
