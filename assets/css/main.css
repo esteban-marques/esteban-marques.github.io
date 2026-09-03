@@ -3034,10 +3034,13 @@ a.scroll-down:hover .scroll-chevron {
   margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px 40px;}
+  gap: 20px 20px;}
 
 .timeline-item {
   position: relative;
+  border: 1px solid #2a3040;
+  border-radius: 6px;
+  padding: 1.4em;
 }
 
 /* date */
@@ -3059,7 +3062,7 @@ a.scroll-down:hover .scroll-chevron {
   position: relative;
   margin: 0;
   padding-bottom: 5px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.999);
+  border-bottom: 1px solid #5AC775;
   color: #f0f1f5;
   font-size: 115%;
   line-height: 1.5;
@@ -3081,6 +3084,77 @@ a.scroll-down:hover .scroll-chevron {
   color: #929bad;
   font-size: 100%;
   line-height: 1.65;
+}
+
+/* Spec. & Skills */
+
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    margin-bottom: 2em;
+}
+
+.spec-card {
+    background: transparent;
+    border: 1px solid #2a3040;
+    border-radius: 6px;
+    padding: 1.4em;
+    transition: border-color 0.2s ease;
+}
+
+.spec-card:hover {
+    border-color: #5AC775;
+}
+
+.spec-icon {
+    color: #5AC775;
+    font-size: 1.4em;
+    margin-bottom: 0.5em;
+}
+
+.spec-card h4 {
+    color: #e8eaf0 !important;
+    font-size: 0.9em !important;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5em !important;
+}
+
+.spec-card p {
+    color: #6b7280;
+    font-size: 0.8em;
+    line-height: 1.6;
+    margin: 0 !important;
+}
+
+.tools-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-bottom: 1.5em;
+}
+
+.tool-tag {
+    background: #1a2230;
+    border: 1px solid #2a3040;
+    color: #b0b8c8;
+    font-size: 0.75em;
+    padding: 4px 12px;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+}
+
+.soft-skills {
+    color: #4b5563;
+    font-size: 0.75em;
+    letter-spacing: 0.08em;
+    margin: 0 !important;
+}
+
+@media screen and (max-width: 736px) {
+    .spec-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 
