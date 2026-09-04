@@ -7,6 +7,20 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+:root {
+	--accent-main: #5ac775;
+	--accent-main-rgb: 90 199 117;
+	--accent-muted: #2D643B;
+	--accent-dark: #17321E;
+	--text-primary: #fafafa;
+	--text-secondary: #68748d;
+	--text-muted: #576075;
+	--bg-body: #101117;
+	--bg-panel: #090b0e;
+	--bg-panel-rgb: 9 11 14;
+	--bg-maze: #1C1E28;
+}
+
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -98,7 +112,7 @@ input, select, textarea {
 		}
 
 	body, input, select, textarea {
-		color: #888;
+		color: var(--text-secondary);
 		font-family: "Lato", sans-serif;
 		font-size: 16pt;
 		font-weight: 400;
@@ -117,11 +131,11 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #5AC775 !important;
+			color: var(--accent-main) !important;
 		}
 
 	strong, b {
-		color: #777;
+		color: var(--text-secondary);
 		font-weight: 700;
 	}
 
@@ -135,7 +149,7 @@ input, select, textarea {
 
 
 	h1, h2, h4, h5, h6 {
-		color: #FFF;
+		color: var(--text-primary);
 		font-weight: 700;
 		line-height: 1em;
 		margin: 0 0 0.5625em 0;
@@ -152,7 +166,7 @@ input, select, textarea {
 	h1.subtitle a {
   		font-family: Doto;
 		font-size: 0.35em;
-		color:#5AC775 !important;
+		color:var(--accent-main) !important;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -172,7 +186,8 @@ input, select, textarea {
 		font-family: Doto;
 		font-size: 1em;
 		line-height: 1.5em;
-		color: #5AC775;
+		color: var(--accent-main);
+		margin-bottom: 1em;
 	}
 
 	h3:before {
@@ -232,7 +247,7 @@ input, select, textarea {
 	code {
 		background: #555;
 		border-radius: 5px;
-		color: #fff;
+		color: var(--text-primary);
 		font-family: "Source Code Pro", monospace;
 		font-size: 0.9em;
 		margin: 0 0.25em;
@@ -1788,7 +1803,7 @@ input, select, textarea {
 	}
 
 	header p {
-		color: #aaa;
+		color: var(--text-secondary);
 		position: relative;
 		margin: 0 0 1.6875em 0;
 	}
@@ -1814,17 +1829,17 @@ input, select, textarea {
 	}
 
 	header.major h2 {
-		color: #FFF;
+		color: var(--text-primary);
 		font-size: 2.5em;
 	}
 
 	header.major h2 .highlight {
 		font-family: Doto;
-    	color: #5AC775;
+    	color: var(--accent-main);
 	}
 
 		header.major h2 + p {
-			color: #777;
+			color: var(--text-secondary);
 			font-size: 1.75em;
 			font-weight: 700;
 			margin-top: -0.75em;
@@ -1862,7 +1877,7 @@ input, select, textarea {
 }
 
 .project-card:hover {
-	border: 1px solid #5AC775;
+	border: 1px solid var(--accent-main);
 }
 
 .project-card-img {
@@ -1887,8 +1902,8 @@ input, select, textarea {
     position: absolute !important;
     top: 0.6em;
     right: 0.6em;
-    background: #5AC775;
-    color: #0f1117;
+    background: var(--accent-main);
+    color: var(--bg-body);
     font-size: 0.65em;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -1970,7 +1985,7 @@ input, select, textarea {
 		input[type="email"]:focus,
 		select:focus,
 		textarea:focus {
-			border-color: #5AC775;
+			border-color: var(--accent-main);
 		}
 
 	select {
@@ -1985,7 +2000,7 @@ input, select, textarea {
 
 		select option {
 			color: #777;
-			background: #fff;
+			background: var(--text-primary);
 		}
 
 		select:focus::-ms-value {
@@ -2069,13 +2084,13 @@ input, select, textarea {
 		input[type="radio"]:checked + label:before {
 			background: #989898;
 			border-color: #989898;
-			color: #ffffff;
+			color: var(--text-primary);
 			content: '\f00c';
 		}
 
 		input[type="checkbox"]:focus + label:before,
 		input[type="radio"]:focus + label:before {
-			border-color: #5AC775;
+			border-color: var(--accent-main);
 		}
 
 	input[type="checkbox"] + label:before {
@@ -2524,9 +2539,9 @@ input, select, textarea {
 			}
 
 			ul.feature-icons li:before {
-				background: #5AC775;
+				background: var(--accent-main);
 				border-radius: 100%;
-				color: #ffffff;
+				color: var(--text-primary);
 				display: block;
 				height: 2.5em;
 				left: 0;
@@ -2643,7 +2658,7 @@ input, select, textarea {
 		background-color: #989898;
 		border-radius: 5px;
 		border: 0;
-		color: #ffffff !important;
+		color: var(--text-primary) !important;
 		cursor: pointer;
 		display: inline-block;
 		font-weight: 700;
@@ -2660,7 +2675,7 @@ input, select, textarea {
 		input[type="button"]:hover,
 		.button:hover {
 			background-color: #a5a5a5;
-			color: #ffffff !important;
+			color: var(--text-primary) !important;
 		}
 
 		input[type="submit"]:active,
@@ -2740,8 +2755,8 @@ input, select, textarea {
 		input[type="reset"].primary,
 		input[type="button"].primary,
 		.button.primary {
-			background-color: #5AC775;
-			color: #ffffff !important;
+			background-color: var(--accent-main);
+			color: var(--text-primary) !important;
 		}
 
 			input[type="submit"].primary:hover,
@@ -2767,7 +2782,7 @@ input, select, textarea {
 		.button:disabled {
 			background-color: #888 !important;
 			box-shadow: inset 0 -0.15em 0 0 rgba(0, 0, 0, 0.15);
-			color: #fff !important;
+			color: var(--text-primary) !important;
 			cursor: default;
 			opacity: 0.25;
 		}
@@ -2824,7 +2839,7 @@ input, select, textarea {
 		justify-content: space-between;
 
 		background: #090B0E;
-		color: #5AC775;
+		color: var(--accent-main);
 		height: 100%;
 		overflow-y: auto;
 		position: fixed;
@@ -2835,11 +2850,11 @@ input, select, textarea {
 	}
 
 		#header h1, #header h2, #header h3, #header h4, #header h5, #header h6 {
-			color: #ffffff;
+			color: var(--text-primary);
 		}
 
 			#header h1 a, #header h2 a, #header h3 a, #header h4 a, #header h5 a, #header h6 a {
-				color: #ffffff;
+				color: var(--text-primary);
 			}
 
 		#header header p {
@@ -2847,11 +2862,11 @@ input, select, textarea {
 		}
 
 		#header a {
-			color: #5AC775;
+			color: var(--accent-main);
 		}
 
 			#header a:hover {
-				color: #ffffff !important;
+				color: var(--text-primary) !important;
 			}
 
 		#header > header {
@@ -2898,7 +2913,7 @@ input, select, textarea {
 			}
 
 				#header > footer .icons li a {
-					color: #5AC775;
+					color: var(--accent-main);
 				}
 
 		#header > nav {
@@ -2926,7 +2941,7 @@ input, select, textarea {
 						-ms-transition: none;
 						transition: none;
 						border: 0;
-						color: #ffffff !important;
+						color: var(--text-primary) !important;
 						display: block;
 						padding: 0.85em 0;
 						text-decoration: none;
@@ -2935,7 +2950,7 @@ input, select, textarea {
 
 						#header > nav ul li a.active {
 							background: #101117;
-							color: #5AC775 !important;
+							color: var(--accent-main) !important;
 							
 						}
 
@@ -2975,6 +2990,25 @@ input, select, textarea {
 			border-top: 0;
 		}
 
+/* Major Tags */
+
+.major-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin-bottom: 1.5em;
+}
+
+.major-tag {
+    background: var(--accent-dark);
+    border: 1px solid var(--accent-muted);
+    color: var(--text-primary);
+    font-size: 0.75em;
+    padding: 4px 12px;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+}
+
 /* Scroll Down CTA */
 
 a.scroll-down,
@@ -2987,7 +3021,7 @@ a.scroll-down:focus {
     align-items: center;
     gap: 12px;
 
-    color: #FFF;
+    color: var(--text-primary);
     text-decoration: none !important;
     border-bottom: none !important;
     box-shadow: none !important;
@@ -2999,23 +3033,23 @@ a.scroll-down:focus {
     font-size: 0.85em;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: #FFF;
+    color: var(--text-primary);
 }
 
 .scroll-chevron {
     width: 12px;
     height: 12px;
-    border-right: 2px solid #FFF;
-    border-bottom: 2px solid #FFF;
+    border-right: 2px solid var(--text-primary);
+    border-bottom: 2px solid var(--text-primary);
     transform: rotate(45deg);
 }
 
 a.scroll-down:hover .scroll-text {
-    color: #5AC775;
+    color: var(--accent-main);
 }
 
 a.scroll-down:hover .scroll-chevron {
-    border-color: #5AC775;
+    border-color: var(--accent-main);
 }
 
 @keyframes bounce {
@@ -3031,7 +3065,6 @@ a.scroll-down:hover .scroll-chevron {
 /* Experience & Formation Timeline */
 
 .timeline {
-  margin-top: 10px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px 20px;}
@@ -3050,7 +3083,7 @@ a.scroll-down:hover .scroll-chevron {
   margin-top: 5px;
 
   font-size: 16px;
-  color: #68748d;
+  color: var(--text-muted) ;
   letter-spacing: 0.02em;
   
 }
@@ -3062,8 +3095,8 @@ a.scroll-down:hover .scroll-chevron {
   position: relative;
   margin: 0;
   padding-bottom: 5px;
-  border-bottom: 1px solid #5AC775;
-  color: #f0f1f5;
+  border-bottom: 1px solid var(--accent-main);
+  color: var(--text-primary);
   font-size: 115%;
   line-height: 1.5;
   font-weight: 600;
@@ -3073,7 +3106,7 @@ a.scroll-down:hover .scroll-chevron {
 .company {
   margin-top: 12px;
   margin-bottom: 14px;
-  color: #68748d;
+  color: var(--text-muted);
   font-size: 20px;
 }
 
@@ -3081,7 +3114,7 @@ a.scroll-down:hover .scroll-chevron {
 .timeline-item > p:last-child {
   margin: 0;
 
-  color: #929bad;
+  color: var(--text-secondary);
   font-size: 100%;
   line-height: 1.65;
 }
@@ -3092,7 +3125,7 @@ a.scroll-down:hover .scroll-chevron {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1em;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 }
 
 .spec-card {
@@ -3103,52 +3136,42 @@ a.scroll-down:hover .scroll-chevron {
     transition: border-color 0.2s ease;
 }
 
-.spec-card:hover {
-    border-color: #5AC775;
-}
-
 .spec-icon {
-    color: #5AC775;
+    color: var(--accent-main);
     font-size: 1.4em;
     margin-bottom: 0.5em;
 }
 
 .spec-card h4 {
-    color: #e8eaf0 !important;
+    color: var(--text-primary) !important;
     font-size: 0.9em !important;
     letter-spacing: 0.05em;
     margin-bottom: 0.5em !important;
 }
 
 .spec-card p {
-    color: #6b7280;
+    color: var(--text-secondary);
     font-size: 0.8em;
     line-height: 1.6;
     margin: 0 !important;
 }
 
 .tools-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5em;
-    margin-bottom: 1.5em;
+    display: grid;
+	grid-template-columns: repeat(5, 1fr);
+    gap: 1em;
+    margin-bottom: 1em;
+	text-align: center;
 }
 
 .tool-tag {
-    background: #1a2230;
+    background: transparent;
     border: 1px solid #2a3040;
-    color: #b0b8c8;
+    color: var(--text-secondary);
     font-size: 0.75em;
     padding: 4px 12px;
     border-radius: 3px;
     letter-spacing: 0.05em;
-}
-
-.soft-skills {
-    color: #4b5563;
-    font-size: 0.75em;
-    letter-spacing: 0.08em;
-    margin: 0 !important;
 }
 
 @media screen and (max-width: 736px) {
@@ -3180,13 +3203,13 @@ a.scroll-down:hover .scroll-chevron {
 }
 
 #sidePanel h2 {
-    color: #e8eaf0;
+    color: var(--text-primary);
     margin-top: 0;
     font-size: 1.6em;
 }
 
 #sidePanel .panel-meta {
-    color: #6b7280;
+    color: var(--text-muted);
     font-size: 0.85em;
     margin-bottom: 1.5em;
     line-height: 1.8;
@@ -3210,7 +3233,7 @@ a.scroll-down:hover .scroll-chevron {
 }
 
 #sidePanel h4 {
-    color: #5AC775;
+    color: var(--accent-main);
     font-size: 0.8em;
     letter-spacing: 0.12em;
     text-transform: uppercase;
@@ -3218,13 +3241,13 @@ a.scroll-down:hover .scroll-chevron {
 }
 
 #sidePanel p {
-    color: #b0b8c8;
+    color: var(--text-secondary);
     font-size: 0.9em;
     line-height: 1.7;
 }
 
 #sidePanel ul {
-    color: #b0b8c8;
+    color: var(--text-secondary);
     font-size: 0.9em;
     padding-left: 1.2em;
     line-height: 1.9;
@@ -3246,7 +3269,7 @@ a.scroll-down:hover .scroll-chevron {
 }
 
 #sidePanel .panel-links a.primary {
-    background: #5AC775;
+    background: var(--accent-main);
     color: #0f1117;
 }
 
@@ -3485,12 +3508,12 @@ a.scroll-down:hover .scroll-chevron {
 				width: 100%;
 				z-index: 10001;
 				background: #222;
-				color: #fff;
+				color: var(--text-primary);
 				min-width: 320px;
 			}
 
 				#titleBar .title {
-					color: #fff;
+					color: var(--text-primary);
 					display: block;
 					font-weight: 700;
 					height: 44px;
@@ -3530,8 +3553,8 @@ a.scroll-down:hover .scroll-chevron {
 					}
 
 					#titleBar .toggle:before {
-						background: #5AC775;
-						color: #ffffff;
+						background: var(--accent-main);
+						color: var(--text-primary);
 						content: '\f0c9';
 						display: block;
 						font-size: 18px;
