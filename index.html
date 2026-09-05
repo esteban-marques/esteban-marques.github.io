@@ -193,22 +193,22 @@
 
 									<div class="spec-grid">
 										<div class="spec-card">
-											<div class="icon solid fa-cog" style="margin-bottom: 0.5em; color: #5AC775"></div>
+											<div class="icon solid fa-cog" style="margin-bottom: 0.5em; color: var(--accent-main)"></div>
 											<h4>Systems Design</h4>
 											<p>Your description here.</p>
 										</div>
 										<div class="spec-card">
-											<div class="icon solid fa-chart-line" style="margin-bottom: 0.5em; color: #5AC775"></div>
+											<div class="icon solid fa-chart-line" style="margin-bottom: 0.5em; color: var(--accent-main)"></div>
 											<h4>Data-driven Workflows</h4>
 											<p>Your description here.</p>
 										</div>
 										<div class="spec-card">
-											<div class="icon solid fa-flask" style="margin-bottom: 0.5em; color: #5AC775"></div>
+											<div class="icon solid fa-flask" style="margin-bottom: 0.5em; color: var(--accent-main)"></div>
 											<h4>Technical Prototyping</h4>
 											<p>Your description here.</p>
 										</div>
 										<div class="spec-card">
-											<div class="icon solid fa-flask" style="margin-bottom: 0.5em; color: #5AC775"></div>
+											<div class="icon solid fa-flask" style="margin-bottom: 0.5em; color: var(--accent-main)"></div>
 											<h4>Tools development</h4>
 											<p>Your description here.</p>
 										</div>
@@ -312,18 +312,33 @@
 					[2,5],[1,5],
 				];
 
+				const accentcolor = window
+				.getComputedStyle(document.documentElement)
+				.getPropertyValue('--accent-main-rgb')
+				.trim();
+
+				const bgpanel = window
+				.getComputedStyle(document.documentElement)
+				.getPropertyValue('--bg-panel')
+				.trim();
+
+				const bgmaze = window
+				.getComputedStyle(document.documentElement)
+				.getPropertyValue('--bg-maze')
+				.trim();
+
 				function draw(pct) {
 					ctx.clearRect(0, 0, 500, 500);
 					for (let r = 0; r < ROWS; r++) {
 						for (let c = 0; c < COLS; c++) {
-							ctx.fillStyle = walls[r][c] === 1 ? '#090B0E' : '#1C1E28';
+							ctx.fillStyle = walls[r][c] === 1 ? bgpanel : bgmaze;
 							ctx.fillRect(c * CELL, r * CELL, CELL, CELL);
 						}
 					}
 					const filled = Math.floor((pct / 100) * path.length);
 					for (let i = 0; i < filled; i++) {
 						const [r, c] = path[i];
-						ctx.fillStyle = `rgba(74, 222, 128, ${0.2 + 0.2 * (i / path.length)})`;
+						ctx.fillStyle = `rgba(${accentcolor}, ${0.2 + 0.2 * (i / path.length)})`;
 						ctx.fillRect(c * CELL + 1, r * CELL + 1, CELL - 2, CELL - 2);
 					}
 				}
@@ -367,7 +382,11 @@
 				}
 				function drawBg(timestamp) {
 					bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
-					squares.forEach(sq => {
+					const accentcolor = window
+					.getComputedStyle(document.documentElement)
+					.getPropertyValue('--accent-main-rgb')
+					.trim();					
+  					squares.forEach(sq => {
 						sq.x += sq.vx;
 						sq.y += sq.vy;
 
@@ -378,7 +397,7 @@
 						if (sq.y > bgCanvas.height) sq.y = -SQUARE_SIZE;
 
 						sq.opacity = 0.03 + 0.07 * Math.abs(Math.sin(timestamp * sq.speed + sq.phase));
-						bgCtx.fillStyle = `rgba(74, 222, 128, ${sq.opacity})`;
+						bgCtx.fillStyle = `rgba(${accentcolor}, ${sq.opacity})`;
 						bgCtx.fillRect(sq.x, sq.y, SQUARE_SIZE, SQUARE_SIZE);
 					});
 					requestAnimationFrame(drawBg);
@@ -451,9 +470,40 @@
 				const p = projects[projectId];
 				if (!p) return;
 
+				const accentcolor = window
+					.getComputedStyle(document.documentElement)
+					.getPropertyValue('--accent-main')
+					.trim();
+					
+				const accentcolormuted = window
+					.getComputedStyle(document.documentElement)
+					.getPropertyValue('--accent-muted')
+					.trim();
+
+				const accentcolordark = window
+					.getComputedStyle(document.documentElement)
+					.getPropertyValue('--accent-dark')
+					.trim();	
+
+				const backgroundcolor = window
+					.getComputedStyle(document.documentElement)
+					.getPropertyValue('--bg-panel')
+					.trim();
+				
+				const textprimary = window
+					.getComputedStyle(document.documentElement)
+					.getPropertyValue('--text-primary')
+					.trim();
+				
+				const textsecondary = window
+					.getComputedStyle(document.documentElement)
+					.getPropertyValue('--text-secondary')
+					.trim();
+
+
 				const statsHtml = p.stats ? `
 					<div style="display:flex; gap:0.5em; flex-wrap:wrap; margin-bottom:1.5em">
-						${p.stats.map(s => `<span style="background:#222431; color:#5AC775; padding:4px 12px; border-radius:3px; font-size:0.8em">${s}</span>`).join('')}
+						${p.stats.map(s => `<span style="background:${accentcolordark}; color:${textprimary}; padding:4px 12px; border:1px solid ${textprimary}; border-color: ${accentcolormuted}; border-radius:3px !important; font-size:0.8em">${s}</span>`).join('')}
 					</div>` : '';
 
 				const linksHtml = `
