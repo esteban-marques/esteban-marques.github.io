@@ -1799,7 +1799,7 @@ input, select, textarea {
 
 		}
 
-/* Section/Article */
+/* Section Article */
 
 	section.special, article.special {
 		text-align: center;
@@ -1847,6 +1847,23 @@ input, select, textarea {
 			font-weight: 700;
 			margin-top: -0.75em;
 		}
+
+/* Buttons Header */
+
+.cta-buttons {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	padding-bottom: 1em;
+}
+
+.btn-cta-primary {
+	color: red !important;
+}
+
+.btn-cta-secondary {
+	color: pink !important;
+}
 
 /* Project Card */
 .project-card-featured .project-card-img {
