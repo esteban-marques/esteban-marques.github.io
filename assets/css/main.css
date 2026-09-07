@@ -2000,7 +2000,7 @@ input, select, textarea {
 	}
 
 	label {
-		color: #777;
+		color: var(--text-secondary);
 		display: block;
 		font-size: 0.9em;
 		font-weight: 700;
@@ -2023,13 +2023,14 @@ input, select, textarea {
 		appearance: none;
 		border-radius: 5px;
 		border: none;
-		border: solid 2px #e4e4e4;
-		color: inherit;
+		border: solid 2px var(--border-main);
+		color: var(--text-primary);
 		display: block;
 		outline: 0;
 		padding: 0 1em;
 		text-decoration: none;
 		width: 100%;
+		background-color: var(--bg-panel);
 	}
 
 		input[type="text"]:invalid,
@@ -2059,8 +2060,8 @@ input, select, textarea {
 	}
 
 		select option {
-			color: #777;
-			background: var(--text-primary);
+			color: var(--text-secondary);
+			background: var(--bg-body);
 		}
 
 		select:focus::-ms-value {
@@ -2162,25 +2163,25 @@ input, select, textarea {
 	}
 
 	::-webkit-input-placeholder {
-		color: #aaa !important;
+		color: var(--text-muted) !important;
 		font-style: italic;
 		opacity: 1.0;
 	}
 
 	:-moz-placeholder {
-		color: #aaa !important;
+		color: var(--text-muted) !important;
 		font-style: italic;
 		opacity: 1.0;
 	}
 
 	::-moz-placeholder {
-		color: #aaa !important;
+		color: var(--text-muted) !important;
 		font-style: italic;
 		opacity: 1.0;
 	}
 
 	:-ms-input-placeholder {
-		color: #aaa !important;
+		color: var(--text-muted) !important;
 		font-style: italic;
 		opacity: 1.0;
 	}
@@ -2715,10 +2716,10 @@ input, select, textarea {
 		-webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		-ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 		transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-		background-color: #989898;
-		border-radius: 5px;
-		border: 0;
-		color: var(--text-primary) !important;
+		background-color: var(--accent-main);
+		border-radius: 3px;
+		border: solid 1px var(--accent-main);
+		color: var(--bg-body) !important;
 		cursor: pointer;
 		display: inline-block;
 		font-weight: 700;
@@ -2734,8 +2735,8 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
 		.button:hover {
-			background-color: #a5a5a5;
-			color: var(--text-primary) !important;
+			background-color: var(--bg-body);
+			color: var(--accent-main) !important;
 		}
 
 		input[type="submit"]:active,
@@ -3323,6 +3324,7 @@ a.scroll-down:hover .scroll-chevron {
 
 #sidePanel .panel-links a {
     padding: 0.5em 1.2em;
+	border: 1px;
     border-radius: 4px;
     font-size: 0.85em;
     text-decoration: none;
@@ -3331,20 +3333,25 @@ a.scroll-down:hover .scroll-chevron {
 
 #sidePanel .panel-links a.primary {
     background: var(--accent-main);
+	border: 1px solid var(--accent-main);
     color: var(--bg-body);
 }
 
 #sidePanel .panel-links a.primary:hover {
+	border: 1px solid var(--accent-main);
     color: var(--bg-body);
 }
 
 #sidePanel .panel-links a.secondary {
     border: 1px solid var(--border-main);
+	border-color: var(--text-secondary);
     color: var(--text-secondary);
 }
 
 #sidePanel .panel-links a:hover {
-    opacity: 0.85;
+	background-color: transparent;
+	border-color: var(--accent-main);
+    color: var(--accent-main);
 }
 
 #closePanelBtn {
