@@ -1851,18 +1851,58 @@ input, select, textarea {
 /* Buttons Header */
 
 .cta-buttons {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	padding-bottom: 1em;
+  width: 443px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
 }
 
-.btn-cta-primary {
-	color: red !important;
+.cta-button {
+  height: 67px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0;
+  
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
 }
 
-.btn-cta-secondary {
-	color: pink !important;
+/* PRIMARY — idle */
+.btn-primary {
+  background: var(--accent-main);
+  border: 1px solid var(--accent-main);
+  color: var(--bg-panel) !important;
+}
+
+/* PRIMARY — hover */
+.btn-primary:hover {
+  background: var(--bg-panel);
+  border-color: var(--accent-main);
+  color: var(--accent-main) !important;
+}
+
+/* SECONDARY — idle */
+.btn-secondary {
+  background: var(--black);
+  border: 1px solid transparent;
+  color: var(--text-primary) !important;
+}
+
+/* SECONDARY — hover */
+.btn-secondary:hover {
+  background: var(--black);
+  border-color: var(--orange);
+  color: var(--orange);
 }
 
 /* Project Card */
@@ -2886,7 +2926,7 @@ input, select, textarea {
 		}
 
 			#header a:hover {
-				color: var(--text-primary) !important;
+				color: var(--text-primary);
 			}
 
 		#header > header {
