@@ -30,12 +30,12 @@
 				<canvas id="mazeCanvas" width="300" height="300" style="display:block; margin: 0 auto 1em;"></canvas>
 				<footer>
 					<div class="cta-buttons">
-					<a href="#contact" class="cta-button btn-primary">
+					<a href="#contact" class="cta-button btn-primary scrolly">
 						<span class="icon solid fa-envelope"></span>
 						<span>CONTACT</span>
 					</a>
 
-					<a href="/cv.pdf" target="_blank" class="cta-button btn-secondary" download>
+					<a href="/Esteban Marques - Technical Game Designer - Resume.pdf" target="_blank" class="cta-button btn-secondary" download>
 						<span class="icon solid fa-file"></span>
 						<span>DOWNLOAD RESUME</span>
 					</a>
@@ -88,7 +88,8 @@
 												<p class="project-meta">Dark Hours, 2025</p>
 												<h4><span class="project-role">Associate Lead Game Designer (Technical Design)</span></h4>
 												<p>A multiplayer comedic horror-game with procedurally generated levels.</p>
-												<a href="#" onclick="event.stopPropagation(); openPanel('darkhours'); return false;">Learn more ›</a>
+												<a href="#" onclick="event.stopPropagation(); openPanel('darkhours'); return false;">Learn more ›</a><br>
+												<a href="/Esteban Marques - Technical Game Designer - Dark Hours Case Study.pdf" target="_blank"; return false;">Check out case study ›</a>
 											</div>
 										</div>
 
@@ -466,7 +467,7 @@
 						'Live product iteration across a full year of Early Access updates'
 					],
 					steam: 'https://store.steampowered.com/app/2208570',
-					caseStudy: '#' // à remplacer par le lien vers ta case study web
+					caseStudy: '/Esteban Marques - Technical Game Designer - Dark Hours Case Study.pdf' // à remplacer par le lien vers ta case study web
 				},
 				'fantastichaven': {
 					title: 'Fantastic Haven',
@@ -546,7 +547,7 @@
 				const linksHtml = `
 					<div class="panel-links">
 						${p.steam ? `<a href="${p.steam}" target="_blank" class="primary">Steam page</a>` : ''}
-						${p.caseStudy ? `<a href="${p.caseStudy}" class="secondary">Case Study</a>` : ''}
+						${p.caseStudy ? `<a href="${p.caseStudy}" target="_blank" class="secondary">Case Study</a>` : ''}
 					</div>`;
 
 				document.getElementById('panelContent').innerHTML = `
